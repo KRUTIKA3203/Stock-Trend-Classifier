@@ -112,7 +112,7 @@ This project reinforced real cloud engineering concepts while also improving my 
 ![Dashboard](/mnt/data/DASHBOARD.jpg)
 
 ### **Landing Page**
-![Landing](/mnt/data/INDEX- PAGE.jpg)
+![Landing](/mnt/data/INDEX-PAGE.jpg)
 
 ### **Stock Details Page**
 ![Stock Details](/mnt/data/STOCK-PAGE.jpg)
