@@ -108,11 +108,11 @@ This project reinforced real cloud engineering concepts while also improving my 
 
 ## 🖼️ Screenshots
 
-### **Dashboard**
-![Dashboard](/DASHBOARD.jpg)
-
 ### **Landing Page**
 ![Landing](/INDEX-PAGE.jpg)
+
+### **Dashboard**
+![Dashboard](/DASHBOARD.jpg)
 
 ### **Stock Details Page**
 ![Stock Details](STOCK-PAGE.jpg)
