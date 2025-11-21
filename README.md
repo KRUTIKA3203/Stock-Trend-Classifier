@@ -121,20 +121,20 @@ This project reinforced real cloud engineering concepts while also improving my 
 
 ## 📂 Project Structure
 /frontend
-index.html
-signup.html
-dashboard.html
-stock.html
-script.js
-styles.css
+1. index.html
+2. signup.html
+3. dashboard.html
+4. stock.html
+5. script.js
+6. styles.css
 
 /backend
-lambda_function.py
+1. lambda_function.py
 
 /screenshots
-dashboard.jpg
-index.jpg
-stock.jpg
+1. index.jpg
+2. dashboard.jpg
+3. stock.jpg
 
 README.md
 
