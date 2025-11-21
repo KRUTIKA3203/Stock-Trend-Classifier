@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Details</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Chart Library -->
+  <script src="https://unpkg.com/lightweight-charts@4.0.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+
+<body class="app-body">
+
+<!-- AUTH (EMERGENCY MODE) -->
+<script src="auth.js"></script>
+<script>
+  // Skip login check — always allow details page
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("detailsContent").style.display = "grid";
+  });
+</script>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sidebar-title">
+    <span class="big-label">Real Time</span>
+    <span class="big-label">Stock Trend<br>Classifier</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="dashboard.html" class="nav-item">Dashboard</a>
+    <a class="nav-item active">Stock Details</a>
+  </nav>
+
+  <a onclick="logout()" class="nav-item" style="cursor:pointer;">Logout</a>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <header class="top-bar details-top">
+    <button onclick="window.location.href='dashboard.html'" class="btn-ghost">
+      ← Back
+    </button>
+
+    <div class="user-chip">
+      <span class="user-avatar">K</span>
+      <span class="user-name">Krutika</span>
+    </div>
+  </header>
+
+  <section id="detailsContent" class="details-grid" style="display:none;">
+
+    <!-- MAIN CARD -->
+    <div class="card details-main-card">
+
+      <div class="card-header">
+        <div>
+          <div class="stock-title" id="detailsName">Loading...</div>
+          <div class="stock-subtitle" id="detailsSymbol"></div>
+        </div>
+
+        <div class="price-block">
+          <div id="detailsPrice" class="price">₹0</div>
+          <div id="detailsChange" class="badge">0%</div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div id="detailsChart" class="chart-container"></div>
+
+      <!-- Range buttons -->
+      <div class="range-btn-row">
+        <button class="range-btn" onclick="loadRange('1D')">1D</button>
+        <button class="range-btn" onclick="loadRange('1W')">1W</button>
+        <button class="range-btn" onclick="loadRange('1M')">1M</button>
+        <button class="range-btn" onclick="loadRange('1Y')">1Y</button>
+      </div>
+
+    </div>
+
+    <!-- RIGHT CARD -->
+    <aside class="card details-side-card">
+
+      <div class="details-info">
+        <div class="info-row">
+          <span class="info-label">Today's Range:</span>
+          <span class="info-value" id="detailsTodayRange">--</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">52 Week Range:</span>
+          <span class="info-value" id="details52Range">--</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">Action:</span>
+          <span class="pill" id="detailsAction">--</span>
+        </div>
+
+      </div>
+
+      <div class="details-divider"></div>
+
+      <div class="info-description">
+        <h3>Analysis</h3>
+        <p id="detailsDescription">--</p>
+      </div>
+
+    </aside>
+
+  </section>
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

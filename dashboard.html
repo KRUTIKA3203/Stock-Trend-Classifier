@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lightweight-charts@4.0.1/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+
+<body class="app-body">
+
+<!-- AUTH (Emergency Mode) -->
+<script src="auth.js"></script>
+<script>
+  // EMERGENCY MODE — always show dashboard
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("dashboardContent").style.display = "grid";
+  });
+</script>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <div class="sidebar-title">
+    <span class="big-label">Real Time</span>
+    <span class="big-label">Stock Trend<br>Classifier</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="nav-item active">Dashboard</a>
+    <a href="stock.html" class="nav-item">Stock Details</a>
+  </nav>
+
+  <a onclick="logout()" class="nav-item" style="cursor:pointer;">Logout</a>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <header class="top-bar">
+    <input id="searchInput" class="search-input" placeholder="Search stocks…">
+    <div class="user-chip">
+      <span class="user-avatar">K</span>
+      <span class="user-name">Krutika</span>
+    </div>
+  </header>
+
+  <section id="dashboardContent" class="dashboard-grid">
+
+    <!-- Left -->
+    <div class="primary-column">
+
+      <!-- Main Chart -->
+      <div class="card main-chart-card">
+        <div class="card-header">
+          <div>
+            <div class="stock-title" id="topStockName">--</div>
+            <div class="stock-subtitle">Top Trending Stock</div>
+          </div>
+          <div class="price-block">
+            <div id="topStockPrice" class="price">₹0</div>
+            <div id="topStockChange" class="badge">0%</div>
+          </div>
+        </div>
+        <div id="mainChart" class="chart-container"></div>
+      </div>
+
+      <!-- Top / Bottom -->
+      <div class="card bottom-row-card">
+        <div class="sub-card">
+          <div class="sub-card-header">Top 5 Stocks</div>
+          <div id="top5List" class="mini-list"></div>
+        </div>
+
+        <div class="sub-card">
+          <div class="sub-card-header">Bottom 5 Stocks</div>
+          <div id="bottom5List" class="mini-list"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIDE LIST -->
+    <aside class="card side-list-card">
+      <div class="side-list-header">
+        <span>All Stocks</span>
+        <span id="stockCount" class="count-badge">0</span>
+      </div>
+      <div id="allStocksList" class="side-list-body"></div>
+    </aside>
+
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
